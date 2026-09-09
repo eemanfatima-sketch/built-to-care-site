@@ -184,7 +184,7 @@ function Index() {
       </section>
 
       {/* About the host */}
-      <section className="bg-tint py-20 sm:py-24">
+      <section className="py-20 sm:py-24">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-[40%_1fr] md:items-start">
           <div>
             <img
