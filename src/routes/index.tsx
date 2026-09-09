@@ -1,24 +1,259 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import logoAsset from "@/assets/built-to-care-logo.png.asset.json";
+// TODO: replace with the real headshot of Abeer Raza.
+import hostPlaceholder from "@/assets/host-placeholder.jpg";
+import { WaveformBand } from "@/components/WaveformBand";
+
+const DESCRIPTION =
+  "Built to Care is a long-form podcast with the owners and operators running home care, home health, and hospice agencies — on staffing, payers, cash flow, and growth.";
+
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Built to Care — the business of care at home" },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: "Built to Care — the business of care at home" },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      // TODO: add og:image / twitter:image once the show's social artwork is
+      // hosted at a public absolute https URL (1200x630).
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
+const THEMES = [
+  ["Staffing and retention", "recruiting caregivers in a tight labor market"],
+  [
+    "Payer complexity",
+    "denials, underpayments, and getting paid for care already delivered",
+  ],
+  ["EVV and compliance", "surviving surveys and visit-verification mandates"],
+  ["VA Community Care", "the payer most agencies overlook"],
+  ["Medicaid managed care", "serving the hardest payer profitably"],
+  ["Growth stories", "the $1M to $10M journey, and what breaks at each stage"],
+  ["AI in home care", "what actually helps, from an operator's view"],
+  ["Aging in place", "the village movement and the demand side"],
+  ["Policy and workforce", "what's coming nationally"],
+  ["Exits and consolidation", "what agencies are worth, and who's buying"],
+];
+
+const COLUMNS = [
+  {
+    title: "Made for operators, not vendors.",
+    body: "Every episode is a working conversation with someone who runs an agency or serves the people who do. We ask about the things that actually decide whether an agency grows: hiring caregivers, getting paid, staying compliant.",
+  },
+  {
+    title: "Long enough to say something.",
+    body: "35 to 45 minutes, one guest, remote video. Released weekly across the season.",
+  },
+  {
+    title: "No pitch.",
+    body: "The host builds software for this industry, and it stays off the mic unless a guest brings it up. The show exists to learn from operators, not to sell to them.",
+  },
+];
+
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="bg-background">
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <WaveformBand />
+        <div className="hero-reveal relative mx-auto max-w-3xl px-6 pt-20 pb-32 text-center sm:pt-28 sm:pb-40">
+          <img
+            src={logoAsset.url}
+            alt="Built to Care podcast logo"
+            width={320}
+            height={168}
+            className="mx-auto h-auto w-[240px] sm:w-[320px]"
+          />
+          <h1 className="mt-10 text-[34px] leading-[1.1] font-light tracking-[-0.02em] sm:text-[56px]">
+            The business of care at home.
+          </h1>
+          <p className="measure mx-auto mt-6 text-card-foreground">
+            Long-form conversations with the people running home care, home health, and
+            hospice agencies — about staffing, payers, cash flow, and growth.
+          </p>
+          <p className="mt-8">
+            <span className="inline-block rounded-full bg-pill px-4 py-1.5 text-sm font-medium text-pill-foreground">
+              Episode 1 now live
+            </span>
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href="#episode-1"
+              className="rounded-full bg-primary px-6 py-3 text-[15px] font-medium text-primary-foreground transition-colors hover:bg-primary-hover"
+            >
+              Watch episode 1
+            </a>
+            <a
+              href="#follow"
+              className="rounded-full border border-border bg-card px-6 py-3 text-[15px] font-medium text-card-foreground transition-colors hover:border-primary hover:text-primary"
+            >
+              Follow the show
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* About the show */}
+      <section className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
+        <h2 className="text-[26px] tracking-[-0.01em] sm:text-[30px]">An operator-first show</h2>
+        <div className="mt-10 grid gap-10 border-t border-border pt-10 md:grid-cols-3 md:gap-0">
+          {COLUMNS.map((col, i) => (
+            <div
+              key={col.title}
+              className={
+                "md:px-8 " +
+                (i === 0 ? "md:pl-0 " : "") +
+                (i === 2 ? "md:pr-0 " : "") +
+                (i > 0 ? "border-t border-border pt-10 md:border-t-0 md:border-l md:pt-0" : "")
+              }
+            >
+              <h3 className="text-[19px] font-medium">{col.title}</h3>
+              <p className="measure mt-3 text-card-foreground">{col.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Episode 1 */}
+      <section id="episode-1" className="bg-tint py-20 sm:py-24">
+        <div className="mx-auto max-w-4xl px-6">
+          <p className="text-muted-foreground">Episode 1</p>
+          <h2 className="mt-2 text-[26px] leading-tight tracking-[-0.01em] sm:text-[30px]">
+            Why an agency owner co-builds her own software
+          </h2>
+          <div className="mt-8 aspect-video w-full overflow-hidden rounded-xl ring-1 ring-border">
+            <iframe
+              className="h-full w-full"
+              src="https://www.youtube-nocookie.com/embed/RXUF8hLY6bw"
+              title="Built to Care, episode 1: Why an agency owner co-builds her own software"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+          <p className="mt-6 font-medium text-foreground">
+            Daniela Jonguitud, Founder and CEO, Chajinel Home Care Services — in
+            conversation with host Abeer Raza.
+          </p>
+          <p className="measure mt-3 text-card-foreground">
+            Daniela runs a home care agency and chose to build technology alongside a
+            product team rather than buy off the shelf. She walks through that decision,
+            and what VA Community Care billing actually looks like from inside an agency.
+          </p>
+        </div>
+      </section>
+
+      {/* This season */}
+      <section className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
+        <h2 className="text-[26px] tracking-[-0.01em] sm:text-[30px]">This season</h2>
+        <p className="measure mt-4 text-card-foreground">
+          Twelve to fourteen episodes with operators, association leaders, and the people
+          who know the numbers.
+        </p>
+        <ul className="mt-10 grid gap-0 border-t border-border sm:grid-cols-2 sm:gap-x-12">
+          {THEMES.map(([title, detail]) => (
+            <li key={title} className="border-b border-border py-5">
+              <span className="font-medium text-foreground">{title}</span>{" "}
+              <span className="text-card-foreground">— {detail}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* About the host */}
+      <section className="bg-tint py-20 sm:py-24">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-[40%_1fr] md:items-start">
+          <div>
+            {/* TODO: swap this placeholder for the real headshot of Abeer Raza. */}
+            <img
+              src={hostPlaceholder}
+              alt="Portrait of Abeer Raza, host of Built to Care"
+              width={800}
+              height={800}
+              loading="lazy"
+              className="mx-auto aspect-square w-[220px] rounded-full object-cover ring-4 ring-border sm:w-[300px] md:mx-0 md:w-full md:max-w-[340px]"
+            />
+          </div>
+          <div>
+            <h2 className="text-[26px] tracking-[-0.01em] sm:text-[30px]">Abeer Raza</h2>
+            <p className="mt-1 text-muted-foreground">Co-founder and CMO, TekRevol</p>
+            <div className="measure mt-6 space-y-4 text-card-foreground">
+              <p>
+                Abeer co-founded TekRevol in 2018 and leads its growth as CMO. What began
+                as a self-funded studio now builds digital products for companies across
+                the US, the Middle East, and beyond.
+              </p>
+              <p>
+                His work in home-based care started with the operators themselves —
+                running roundtables with agency owners in Austin and Dallas, and
+                co-building software with agencies rather than for them. That's where this
+                show came from.
+              </p>
+              <p>
+                He hosts every episode. The format is deliberately simple: one guest,
+                forty minutes, and questions about the business rather than the
+                technology.
+              </p>
+            </div>
+            {/* TODO: add Abeer Raza's LinkedIn profile URL. */}
+            <p className="mt-6">
+              <a
+                href="#"
+                className="text-primary underline-offset-4 hover:text-primary-hover hover:underline"
+              >
+                Abeer on LinkedIn
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Follow the show */}
+      <section id="follow" className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
+        <h2 className="text-[26px] tracking-[-0.01em] sm:text-[30px]">Follow the show</h2>
+        <p className="measure mt-4 text-card-foreground">
+          New episodes weekly. Watch on YouTube, or listen wherever you get podcasts.
+        </p>
+        <ul className="mt-10 max-w-xl border-t border-border">
+          {/* TODO: add the real YouTube channel, Apple Podcasts, and Spotify URLs. */}
+          {["YouTube", "Apple Podcasts", "Spotify"].map((name) => (
+            <li key={name} className="border-b border-border">
+              <a
+                href="#"
+                className="block py-4 text-primary transition-colors hover:text-primary-hover"
+              >
+                {name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <footer className="mx-auto max-w-6xl px-6 pb-16">
+        <div className="border-t border-border pt-8">
+          <p className="text-card-foreground">
+            Built to Care is produced by{" "}
+            <a
+              href="https://www.tekrevol.com"
+              className="text-primary underline-offset-4 hover:text-primary-hover hover:underline"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              TekRevol
+            </a>
+            .
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            © {new Date().getFullYear()} Built to Care. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </main>
   );
 }
