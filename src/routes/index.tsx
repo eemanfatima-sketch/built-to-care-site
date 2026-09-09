@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import logoAsset from "@/assets/built-to-care-logo.png.asset.json";
-// TODO: replace with the real headshot of Abeer Raza.
-import hostPlaceholder from "@/assets/host-placeholder.jpg";
+import hostPhotoAsset from "@/assets/abeer-raza-headshot.webp.asset.json";
 import { WaveformBand } from "@/components/WaveformBand";
 
 const DESCRIPTION =
@@ -43,7 +42,7 @@ const THEMES = [
 
 const COLUMNS = [
   {
-    title: "Made for operators, not vendors.",
+    title: "Built for operators.",
     body: "Every episode is a working conversation with someone who runs an agency or serves the people who do. We ask about the things that actually decide whether an agency grows: hiring caregivers, getting paid, staying compliant.",
   },
   {
@@ -51,8 +50,8 @@ const COLUMNS = [
     body: "35 to 45 minutes, one guest, remote video. Released weekly across the season.",
   },
   {
-    title: "No pitch.",
-    body: "The host builds software for this industry, and it stays off the mic unless a guest brings it up. The show exists to learn from operators, not to sell to them.",
+    title: "Voices from across the country.",
+    body: "Agency founders, association leaders, and the people who hold the industry's benchmarking data — from single-market independents to national platforms.",
   },
 ];
 
@@ -101,7 +100,14 @@ function Index() {
 
       {/* About the show */}
       <section className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
-        <h2 className="text-[26px] tracking-[-0.01em] sm:text-[30px]">An operator-first show</h2>
+        <h2 className="text-[26px] tracking-[-0.01em] sm:text-[30px]">A season-long question</h2>
+        <p className="measure mt-6 text-[19px] text-card-foreground">
+          Referrals come in. Patients need care, caregivers need scheduling,
+          authorizations need tracking, visits need verifying, documentation needs
+          completing, and claims need to turn into cash. Somewhere in between all of
+          that, an enormous amount of manual work happens — and time and revenue quietly
+          slip through the cracks. This season is an attempt to find out where.
+        </p>
         <div className="mt-10 grid gap-10 border-t border-border pt-10 md:grid-cols-3 md:gap-0">
           {COLUMNS.map((col, i) => (
             <div
@@ -125,13 +131,13 @@ function Index() {
         <div className="mx-auto max-w-4xl px-6">
           <p className="text-muted-foreground">Episode 1</p>
           <h2 className="mt-2 text-[26px] leading-tight tracking-[-0.01em] sm:text-[30px]">
-            Why an agency owner co-builds her own software
+            Building your own tools, and billing the VA
           </h2>
           <div className="mt-8 aspect-video w-full overflow-hidden rounded-xl ring-1 ring-border">
             <iframe
               className="h-full w-full"
               src="https://www.youtube-nocookie.com/embed/RXUF8hLY6bw"
-              title="Built to Care, episode 1: Why an agency owner co-builds her own software"
+              title="Built to Care, episode 1: Building your own tools, and billing the VA"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -142,9 +148,9 @@ function Index() {
             conversation with host Abeer Raza.
           </p>
           <p className="measure mt-3 text-card-foreground">
-            Daniela runs a home care agency and chose to build technology alongside a
-            product team rather than buy off the shelf. She walks through that decision,
-            and what VA Community Care billing actually looks like from inside an agency.
+            Daniela runs a home care agency and decided to build her own systems rather
+            than take what was on the shelf. She walks through that decision, and what
+            VA Community Care billing actually looks like from inside an agency.
           </p>
         </div>
       </section>
@@ -166,13 +172,23 @@ function Index() {
         </ul>
       </section>
 
+      {/* Pull quote */}
+      <section className="bg-card py-24 sm:py-32">
+        <figure className="mx-auto max-w-[48ch] px-6 text-center">
+          <blockquote className="text-[26px] leading-snug font-light tracking-[-0.01em] text-foreground sm:text-[34px]">
+            None of the systems are broken. They're all doing what they're supposed to
+            do. It's everything happening between them that seems broken.
+          </blockquote>
+          <figcaption className="mt-6 text-muted-foreground">Abeer Raza</figcaption>
+        </figure>
+      </section>
+
       {/* About the host */}
-      <section className="bg-tint py-20 sm:py-24">
+      <section className="py-20 sm:py-24">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-[40%_1fr] md:items-start">
           <div>
-            {/* TODO: swap this placeholder for the real headshot of Abeer Raza. */}
             <img
-              src={hostPlaceholder}
+              src={hostPhotoAsset.url}
               alt="Portrait of Abeer Raza, host of Built to Care"
               width={800}
               height={800}
@@ -182,35 +198,63 @@ function Index() {
           </div>
           <div>
             <h2 className="text-[26px] tracking-[-0.01em] sm:text-[30px]">Abeer Raza</h2>
-            <p className="mt-1 text-muted-foreground">Co-founder and CMO, TekRevol</p>
+            <p className="mt-1 text-muted-foreground">Host, Built to Care</p>
             <div className="measure mt-6 space-y-4 text-card-foreground">
               <p>
-                Abeer co-founded TekRevol in 2018 and leads its growth as CMO. What began
-                as a self-funded studio now builds digital products for companies across
-                the US, the Middle East, and beyond.
+                Abeer is a serial entrepreneur, keynote speaker, and growth advisor who
+                writes on entrepreneurship and leadership for Entrepreneur and Forbes.
               </p>
               <p>
-                His work in home-based care started with the operators themselves —
-                running roundtables with agency owners in Austin and Dallas, and
-                co-building software with agencies rather than for them. That's where this
-                show came from.
+                He came to home-based care with the instinct to look at a business
+                problem and ask what could solve it. After a year of roundtables with
+                agency owners in Austin and Dallas, and a lot of listening, he is less
+                sure that was the right place to start. Most of the painful parts of
+                running an agency already have something handling them. Whether that
+                makes it a technology problem or a systems problem is the question he
+                keeps circling.
               </p>
               <p>
                 He hosts every episode. The format is deliberately simple: one guest,
-                forty minutes, and questions about the business rather than the
-                technology.
+                forty minutes, and questions about the business of running an agency —
+                asked by someone still working out the answers.
               </p>
             </div>
-            {/* TODO: add Abeer Raza's LinkedIn profile URL. */}
             <p className="mt-6">
               <a
-                href="#"
+                href="https://www.linkedin.com/in/abeerraza/"
                 className="text-primary underline-offset-4 hover:text-primary-hover hover:underline"
+                target="_blank"
+                rel="noopener"
               >
                 Abeer on LinkedIn
               </a>
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* One question */}
+      <section className="bg-tint py-20 sm:py-24">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <h2 className="text-[26px] tracking-[-0.01em] sm:text-[30px]">
+            One question, if you run an agency
+          </h2>
+          <p className="measure mx-auto mt-4 text-card-foreground">
+            What's the one part of running your agency that is still far more painful
+            and manual than it has any right to be?
+          </p>
+          {/* TODO: point this at Abeer's email (mailto:) once confirmed; LinkedIn is
+              the interim destination. */}
+          <p className="mt-6">
+            <a
+              href="https://www.linkedin.com/in/abeerraza/"
+              className="text-primary underline-offset-4 hover:text-primary-hover hover:underline"
+              target="_blank"
+              rel="noopener"
+            >
+              Tell Abeer
+            </a>
+          </p>
         </div>
       </section>
 
@@ -237,20 +281,8 @@ function Index() {
 
       <footer className="mx-auto max-w-6xl px-6 pb-16">
         <div className="border-t border-border pt-8">
-          <p className="text-card-foreground">
-            Built to Care is produced by{" "}
-            <a
-              href="https://www.tekrevol.com"
-              className="text-primary underline-offset-4 hover:text-primary-hover hover:underline"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              TekRevol
-            </a>
-            .
-          </p>
-          <p className="mt-2 text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Built to Care. All rights reserved.
+          <p className="text-sm text-muted-foreground">
+            Built to Care · © {new Date().getFullYear()}
           </p>
         </div>
       </footer>
