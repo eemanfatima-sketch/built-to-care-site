@@ -172,16 +172,6 @@ function Index() {
         </ul>
       </section>
 
-      {/* Pull quote */}
-      <section className="bg-card py-24 sm:py-32">
-        <figure className="mx-auto max-w-[48ch] px-6 text-center">
-          <blockquote className="text-[26px] leading-snug font-light tracking-[-0.01em] text-foreground sm:text-[34px]">
-            None of the systems are broken. They're all doing what they're supposed to
-            do. It's everything happening between them that seems broken.
-          </blockquote>
-          <figcaption className="mt-6 text-muted-foreground">Abeer Raza</figcaption>
-        </figure>
-      </section>
 
       {/* About the host */}
       <section className="py-20 sm:py-24">
