@@ -28,7 +28,7 @@ export function WaveformBand() {
         focusable="false"
       >
         {heights.map((h, i) => {
-          const barHeight = h * 92;
+          const barHeight = Math.round(h * 92 * 100) / 100;
           return (
             <rect
               key={i}
