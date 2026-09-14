@@ -81,18 +81,12 @@ function Index() {
               Episode 1 now live
             </span>
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-8 flex items-center justify-center">
             <a
               href="#episode-1"
               className="rounded-full bg-primary px-6 py-3 text-[15px] font-medium text-primary-foreground transition-colors hover:bg-primary-hover"
             >
               Watch episode 1
-            </a>
-            <a
-              href="#follow"
-              className="rounded-full border border-border bg-card px-6 py-3 text-[15px] font-medium text-card-foreground transition-colors hover:border-primary hover:text-primary"
-            >
-              Follow the show
             </a>
           </div>
         </div>
@@ -156,20 +150,33 @@ function Index() {
       </section>
 
       {/* This season */}
-      <section className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
-        <h2 className="text-[26px] tracking-[-0.01em] sm:text-[30px]">This season</h2>
-        <p className="measure mt-4 text-card-foreground">
-          Twelve to fourteen episodes with operators, association leaders, and the people
-          who know the numbers.
-        </p>
-        <ul className="mt-10 grid gap-0 border-t border-border sm:grid-cols-2 sm:gap-x-12">
-          {THEMES.map(([title, detail]) => (
-            <li key={title} className="border-b border-border py-5">
-              <span className="font-medium text-foreground">{title}</span>{" "}
-              <span className="text-card-foreground">— {detail}</span>
-            </li>
-          ))}
-        </ul>
+      <section className="bg-card py-20 sm:py-24">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[minmax(220px,0.7fr)_minmax(0,1.7fr)] lg:gap-20">
+          <div className="lg:sticky lg:top-12 lg:self-start">
+            <p className="font-medium text-primary">Across the season</p>
+            <h2 className="mt-2 text-[30px] leading-tight sm:text-[38px]">The business behind the care</h2>
+            <p className="measure mt-5 text-card-foreground">
+              Twelve to fourteen episodes with operators, association leaders, and the
+              people who know the numbers.
+            </p>
+          </div>
+          <ol className="grid border-t border-border sm:grid-cols-2 sm:gap-x-10">
+            {THEMES.map(([title, detail], index) => (
+              <li
+                key={title}
+                className="grid min-w-0 grid-cols-[2.25rem_minmax(0,1fr)] gap-3 border-b border-border py-6"
+              >
+                <span className="pt-0.5 text-sm font-medium text-primary" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div className="min-w-0">
+                  <h3 className="text-[18px] leading-snug font-medium">{title}</h3>
+                  <p className="mt-1 text-[16px] leading-relaxed text-card-foreground">{detail}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
       </section>
 
 
@@ -196,9 +203,7 @@ function Index() {
               </p>
               <p>
                 He came to home-based care with the instinct to look at a business
-                problem and ask what could solve it. After a year of roundtables with
-                agency owners in Austin and Dallas, and a lot of listening, he is less
-                sure that was the right place to start. Most of the painful parts of
+                problem and ask what could solve it. But most of the painful parts of
                 running an agency already have something handling them. Whether that
                 makes it a technology problem or a systems problem is the question he
                 keeps circling.
@@ -248,28 +253,7 @@ function Index() {
         </div>
       </section>
 
-      {/* Follow the show */}
-      <section id="follow" className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
-        <h2 className="text-[26px] tracking-[-0.01em] sm:text-[30px]">Follow the show</h2>
-        <p className="measure mt-4 text-card-foreground">
-          New episodes weekly. Watch on YouTube, or listen wherever you get podcasts.
-        </p>
-        <ul className="mt-10 max-w-xl border-t border-border">
-          {/* TODO: add the real YouTube channel, Apple Podcasts, and Spotify URLs. */}
-          {["YouTube", "Apple Podcasts", "Spotify"].map((name) => (
-            <li key={name} className="border-b border-border">
-              <a
-                href="#"
-                className="block py-4 text-primary transition-colors hover:text-primary-hover"
-              >
-                {name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <footer className="mx-auto max-w-6xl px-6 pb-16">
+      <footer className="mx-auto max-w-6xl px-6 py-12">
         <div className="border-t border-border pt-8">
           <p className="text-sm text-muted-foreground">
             Built to Care · © {new Date().getFullYear()}
