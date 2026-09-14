@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Linkedin } from "lucide-react";
 
 import logoAsset from "@/assets/built-to-care-logo.png.asset.json";
 import hostPhotoAsset from "@/assets/abeer-raza-headshot.webp.asset.json";
