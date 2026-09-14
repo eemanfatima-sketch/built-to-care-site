@@ -190,7 +190,18 @@ function Index() {
             />
           </div>
           <div>
-            <h2 className="text-[26px] tracking-[-0.01em] sm:text-[30px]">Abeer Raza</h2>
+            <div className="flex items-center gap-3">
+              <h2 className="text-[26px] tracking-[-0.01em] sm:text-[30px]">Abeer Raza</h2>
+              <a
+                href="https://www.linkedin.com/in/abeerraza/"
+                aria-label="Abeer Raza on LinkedIn"
+                className="inline-flex text-primary transition-colors hover:text-primary-hover"
+                target="_blank"
+                rel="noopener"
+              >
+                <Linkedin size={22} strokeWidth={1.75} />
+              </a>
+            </div>
             <p className="mt-1 text-muted-foreground">Host, Built to Care</p>
             <div className="measure mt-6 space-y-4 text-card-foreground">
               <p>
@@ -210,16 +221,6 @@ function Index() {
                 asked by someone still working out the answers.
               </p>
             </div>
-            <p className="mt-6">
-              <a
-                href="https://www.linkedin.com/in/abeerraza/"
-                className="text-primary underline-offset-4 hover:text-primary-hover hover:underline"
-                target="_blank"
-                rel="noopener"
-              >
-                Abeer on LinkedIn
-              </a>
-            </p>
           </div>
         </div>
       </section>
