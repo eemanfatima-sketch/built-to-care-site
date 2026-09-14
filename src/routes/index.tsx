@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Linkedin } from "lucide-react";
 
 import logoAsset from "@/assets/built-to-care-logo.png.asset.json";
 import hostPhotoAsset from "@/assets/abeer-raza-headshot.webp.asset.json";
+import linkedinIconAsset from "@/assets/linkedin-icon.webp.asset.json";
 import { WaveformBand } from "@/components/WaveformBand";
 
 const DESCRIPTION =
@@ -199,7 +199,13 @@ function Index() {
                 target="_blank"
                 rel="noopener"
               >
-                <Linkedin size={22} strokeWidth={1.75} />
+                <img
+                  src={linkedinIconAsset.url}
+                  alt="LinkedIn"
+                  width={22}
+                  height={22}
+                  className="h-[22px] w-[22px]"
+                />
               </a>
             </div>
             <p className="mt-1 text-muted-foreground">Host, Built to Care</p>
