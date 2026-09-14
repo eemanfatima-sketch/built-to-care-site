@@ -76,11 +76,6 @@ function Index() {
             Long-form conversations with the people running home care, home health, and
             hospice agencies — about staffing, payers, cash flow, and growth.
           </p>
-          <p className="mt-8">
-            <span className="inline-block rounded-full bg-pill px-4 py-1.5 text-sm font-medium text-pill-foreground">
-              Episode 1 now live
-            </span>
-          </p>
           <div className="mt-8 flex items-center justify-center">
             <a
               href="#episode-1"
