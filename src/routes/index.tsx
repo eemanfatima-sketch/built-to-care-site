@@ -237,16 +237,16 @@ function Index() {
           </p>
           {/* TODO: point this at Abeer's email (mailto:) once confirmed; LinkedIn is
               the interim destination. */}
-          <p className="mt-6">
+          <div className="mt-8 flex items-center justify-center">
             <a
               href="https://www.linkedin.com/in/abeerraza/"
-              className="text-primary underline-offset-4 hover:text-primary-hover hover:underline"
+              className="rounded-full bg-primary px-6 py-3 text-[15px] font-medium text-primary-foreground transition-colors hover:bg-primary-hover"
               target="_blank"
               rel="noopener"
             >
               Tell Abeer
             </a>
-          </p>
+          </div>
         </div>
       </section>
 
