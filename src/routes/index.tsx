@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import logoAsset from "@/assets/built-to-care-logo.png.asset.json";
-import hostPhotoAsset from "@/assets/abeer-raza-headshot.webp.asset.json";
-import linkedinIconAsset from "@/assets/linkedin-icon.webp.asset.json";
 import { WaveformBand } from "@/components/WaveformBand";
+
+const LOGO_URL = "/built-to-care-logo.png";
+const HOST_PHOTO_URL = "/abeer-raza-headshot.webp";
+const LINKEDIN_ICON_URL = "/linkedin-icon.webp";
 
 const DESCRIPTION =
   "Built to Care is a long-form podcast with the owners and operators running home care, home health, and hospice agencies — on staffing, payers, cash flow, and growth.";
@@ -64,7 +65,7 @@ function Index() {
         <WaveformBand />
         <div className="hero-reveal relative mx-auto max-w-3xl px-6 pt-20 pb-32 text-center sm:pt-28 sm:pb-40">
           <img
-            src={logoAsset.url}
+            src={LOGO_URL}
             alt="Built to Care podcast logo"
             width={320}
             height={168}
@@ -181,7 +182,7 @@ function Index() {
         <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-[40%_1fr] md:items-start">
           <div>
             <img
-              src={hostPhotoAsset.url}
+              src={HOST_PHOTO_URL}
               alt="Portrait of Abeer Raza, host of Built to Care"
               width={800}
               height={800}
@@ -200,7 +201,7 @@ function Index() {
                 rel="noopener"
               >
                 <img
-                  src={linkedinIconAsset.url}
+                  src={LINKEDIN_ICON_URL}
                   alt="LinkedIn"
                   width={22}
                   height={22}
