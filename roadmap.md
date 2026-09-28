@@ -6,3 +6,4 @@
 - [x] Remove all TekRevol mentions; LinkedIn → https://www.linkedin.com/in/abeerraza/
 - [x] Verify responsive layout (375px + desktop) — no overflow, photo and quote render
 - [x] Unify typography, redesign the season list, remove social links, and tighten the host bio
+- [x] Make all site images portable to Railway hosting

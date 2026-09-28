@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep user-facing images needed by Railway under `public/`; Lovable CDN pointer paths are not portable to external hosting.
