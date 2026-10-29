@@ -7,3 +7,5 @@
 - [x] Verify responsive layout (375px + desktop) — no overflow, photo and quote render
 - [x] Unify typography, redesign the season list, remove social links, and tighten the host bio
 - [x] Make all site images portable to Railway hosting
+- [x] Add Where the week goes calculator, shared header link, and sitemap
+- [x] Verify calculator rules and desktop/mobile interactions
