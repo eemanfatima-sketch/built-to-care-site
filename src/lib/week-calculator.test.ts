@@ -11,7 +11,7 @@ describe('Office week calculator', () => {
     expect(result.weeklyHours).toBe(58);
     expect(result.annualHours).toBe(3016);
     expect(result.annualCost).toBe(84448);
-    expect(result.fte.toFixed(1)).toBe('1.4');
+    expect((Math.round(result.fte * 10) / 10).toFixed(1)).toBe('1.5');
   });
   test('Accepts values above the slider maximum of 40', () => {
     const result = calculateWeek({ ...DEFAULT_INPUTS, scheduling: '80' });

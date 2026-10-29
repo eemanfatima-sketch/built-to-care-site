@@ -71,7 +71,7 @@ function WeekCalculator() {
           <div className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-5 border-t border-border pt-6 sm:gap-x-10">
             {[
               [whole.format(result.annualHours), 'hours a year'],
-              [result.fte.toFixed(1), 'full-time office staff'],
+              [(Math.round(result.fte * 10) / 10).toFixed(1), 'full-time office staff'],
               [number.format(result.weeklyHours), 'hours a week'],
             ].map(([value, label]) => (
               <div key={label}>
