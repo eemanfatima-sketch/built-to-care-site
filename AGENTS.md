@@ -10,3 +10,5 @@
 <!-- LOVABLE:END -->
 
 - Keep user-facing images needed by Railway under `public/`; Lovable CDN pointer paths are not portable to external hosting.
+- Keep calculator math in a browser-safe pure module with unit tests; use one state object for all calculator inputs so submissions can be added without restructuring.
+- Shared navigation belongs above the root Outlet; scope calculator typography and controls to its page to preserve the existing podcast design.
