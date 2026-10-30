@@ -292,7 +292,7 @@ function Index() {
 
       <footer className="mx-auto max-w-6xl px-6 py-12">
         <div className="border-t border-border pt-8">
-          <nav aria-label="Follow Built to Care" className="-ml-3 flex flex-wrap gap-1">
+          <nav aria-label="Follow Built to Care" className="-ml-3 flex flex-wrap">
             {[
               ["YouTube", "https://www.youtube.com/@builttocareshow", Youtube],
               ["LinkedIn", "https://www.linkedin.com/company/144056470/", Linkedin],
