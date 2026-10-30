@@ -1,4 +1,5 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
+import { Instagram, Linkedin, Youtube } from "lucide-react";
 
 import { WaveformBand } from "@/components/WaveformBand";
 import { Button } from "@/components/ui/button";
@@ -291,16 +292,26 @@ function Index() {
 
       <footer className="mx-auto max-w-6xl px-6 py-12">
         <div className="border-t border-border pt-8">
-          <nav aria-label="Follow Built to Care" className="flex flex-wrap gap-x-7 gap-y-3 text-[15px]">
+          <nav aria-label="Follow Built to Care" className="-ml-3 flex flex-wrap gap-1">
             {[
-              ["YouTube", "https://www.youtube.com/@builttocareshow"],
-              ["LinkedIn", "https://www.linkedin.com/company/144056470/"],
-              ["Instagram", "https://www.instagram.com/built.tocare/"],
-            ].map(([label, href]) => (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="text-primary transition-colors hover:text-primary-hover">
-                {label}
-              </a>
-            ))}
+              ["YouTube", "https://www.youtube.com/@builttocareshow", Youtube],
+              ["LinkedIn", "https://www.linkedin.com/company/144056470/", Linkedin],
+              ["Instagram", "https://www.instagram.com/built.tocare/", Instagram],
+            ].map(([label, href, Icon]) => {
+              const I = Icon as typeof Youtube;
+              return (
+                <a
+                  key={label as string}
+                  href={href as string}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Built to Care on ${label}`}
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-primary focus-visible:text-primary"
+                >
+                  <I size={20} strokeWidth={1.75} aria-hidden="true" />
+                </a>
+              );
+            })}
           </nav>
           <div className="mt-6 border-t border-border pt-6">
           <p className="text-sm text-muted-foreground">
