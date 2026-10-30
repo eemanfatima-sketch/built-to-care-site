@@ -8,15 +8,15 @@ const HOST_PHOTO_URL = "/abeer-raza-headshot.webp";
 const LINKEDIN_ICON_URL = "/linkedin-icon.webp";
 
 const DESCRIPTION =
-  "Built to Care is a long-form podcast with the owners and operators running home care, home health, and hospice agencies — on staffing, payers, cash flow, and growth.";
+  "Built to Care is a long-form podcast with the owners and operators running home care, home health, and hospice agencies, on staffing, payers, cash flow, and growth.";
 
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Built to Care — the business of care at home" },
+      { title: "Built to Care | The business of care at home" },
       { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: "Built to Care — the business of care at home" },
+      { property: "og:title", content: "Built to Care | The business of care at home" },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -55,7 +55,7 @@ const COLUMNS = [
   },
   {
     title: "Voices from across the country.",
-    body: "Agency founders, association leaders, and the people who hold the industry's benchmarking data — from single-market independents to national platforms.",
+    body: "Agency founders, association leaders, and the people who hold the industry's benchmarking data, from single-market independents to national platforms.",
   },
 ];
 
@@ -77,8 +77,7 @@ function Index() {
             The business of care at home.
           </h1>
           <p className="measure mx-auto mt-6 text-card-foreground">
-            Long-form conversations with the people running home care, home health, and
-            hospice agencies — about staffing, payers, cash flow, and growth.
+            Long-form conversations with the people running home care agencies, about staffing, payers, cash flow, and growth.
           </p>
           <div className="mt-8 flex items-center justify-center">
             <a
@@ -98,7 +97,7 @@ function Index() {
           Referrals come in. Patients need care, caregivers need scheduling,
           authorizations need tracking, visits need verifying, documentation needs
           completing, and claims need to turn into cash. Somewhere in between all of
-          that, an enormous amount of manual work happens — and time and revenue quietly
+          that, an enormous amount of manual work happens, and time and revenue quietly
           slip through the cracks. This season is an attempt to find out where.
         </p>
         <div className="mt-10 grid gap-10 border-t border-border pt-10 md:grid-cols-3 md:gap-0">
@@ -137,7 +136,7 @@ function Index() {
             />
           </div>
           <p className="mt-6 font-medium text-foreground">
-            Daniela Jonguitud, Founder and CEO, Chajinel Home Care Services — in
+            Daniela Jonguitud, Founder and CEO of Chajinel Home Care Services, in
             conversation with host Abeer Raza.
           </p>
           <p className="measure mt-3 text-card-foreground">
@@ -257,7 +256,7 @@ function Index() {
               </p>
               <p>
                 He hosts every episode. The format is deliberately simple: one guest,
-                forty minutes, and questions about the business of running an agency —
+                forty minutes, and questions about the business of running an agency,
                 asked by someone still working out the answers.
               </p>
             </div>
@@ -292,9 +291,22 @@ function Index() {
 
       <footer className="mx-auto max-w-6xl px-6 py-12">
         <div className="border-t border-border pt-8">
+          <nav aria-label="Follow Built to Care" className="flex flex-wrap gap-x-7 gap-y-3 text-[15px]">
+            {[
+              ["YouTube", "https://www.youtube.com/@builttocareshow"],
+              ["LinkedIn", "https://www.linkedin.com/company/144056470/"],
+              ["Instagram", "https://www.instagram.com/built.tocare/"],
+            ].map(([label, href]) => (
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="text-primary transition-colors hover:text-primary-hover">
+                {label}
+              </a>
+            ))}
+          </nav>
+          <div className="mt-6 border-t border-border pt-6">
           <p className="text-sm text-muted-foreground">
             Built to Care · © {new Date().getFullYear()}
           </p>
+          </div>
         </div>
       </footer>
     </main>
