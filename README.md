@@ -84,7 +84,7 @@ Small line above the title: Episode 1
 
 Title: Why an agency owner co-builds her own software
 
-Embed the YouTube video responsively at 16:9, https://www.youtube.com/watch?v=RXUF8hLY6bw. Give the iframe a #C7DCF7 ring and 12px radius. Use youtube-nocookie.com and lazy-load it.
+Embed the YouTube video responsively at 16:9, https://www.youtube.com/watch?v=iadCLft7Jq0. Give the iframe a #C7DCF7 ring and 12px radius. Use youtube-nocookie.com and lazy-load it.
 
 Below the video, a guest line: Daniela Jonguitud, Founder and CEO, Chajinel Home Care Services — in conversation with host Abeer Raza.
 
