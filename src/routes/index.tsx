@@ -1,6 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 
 import { WaveformBand } from "@/components/WaveformBand";
+import { Button } from "@/components/ui/button";
 
 const LOGO_URL = "/built-to-care-logo.png";
 const HOST_PHOTO_URL = "/abeer-raza-headshot.webp";
@@ -18,6 +19,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Built to Care — the business of care at home" },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: "/" },
       // TODO: add og:image / twitter:image once the show's social artwork is
       // hosted at a public absolute https URL (1200x630).
@@ -143,6 +145,35 @@ function Index() {
             than take what was on the shelf. She walks through that decision, and what
             VA Community Care billing actually looks like from inside an agency.
           </p>
+        </div>
+      </section>
+
+      {/* Calculator invitation */}
+      <section className="border-y border-border bg-background py-14">
+        <div className="mx-auto flex max-w-6xl flex-col items-start gap-12 px-6 min-[720px]:flex-row">
+          <div className="shrink-0">
+            <p className="font-display text-[42px] leading-none font-light tracking-normal text-foreground tabular-nums min-[720px]:text-[62px]">
+              $58,240
+            </p>
+            <p className="mt-3 text-[13.5px] leading-normal text-muted-foreground min-[720px]:max-w-[22ch]">
+              is what forty hours a week of admin costs in a year, at $28 an hour loaded
+            </p>
+          </div>
+          <div className="min-w-0 flex-1">
+            <h2 className="font-display text-[25px] leading-[1.3] font-normal text-foreground">
+              None of it shows up as a line on the P&amp;L.
+            </h2>
+            <p className="mt-3 font-calculator text-[16.5px] leading-[1.6] text-card-foreground">
+              Scheduling, authorizations, EVV exceptions, claims. Add up your own hours and see
+              the number.
+            </p>
+            <Button
+              asChild
+              className="mt-6 h-auto rounded-full bg-primary px-[22px] py-3 font-calculator text-[16px] font-medium text-primary-foreground shadow-none hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-primary focus-visible:ring-0"
+            >
+              <Link to="/where-the-week-goes">Work out yours</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
