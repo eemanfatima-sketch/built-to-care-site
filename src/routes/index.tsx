@@ -124,13 +124,13 @@ function Index() {
         <div className="mx-auto max-w-4xl px-6">
           <p className="text-muted-foreground">Episode 1</p>
           <h2 className="mt-2 text-[26px] leading-tight tracking-[-0.01em] sm:text-[30px]">
-            Building your own tools, and billing the VA
+            Caregiver retention isn't a pay problem
           </h2>
           <div className="mt-8 aspect-video w-full overflow-hidden rounded-xl ring-1 ring-border">
             <iframe
               className="h-full w-full"
-              src="https://www.youtube-nocookie.com/embed/RXUF8hLY6bw"
-              title="Built to Care, episode 1: Building your own tools, and billing the VA"
+              src="https://www.youtube-nocookie.com/embed/iadCLft7Jq0"
+              title="Built to Care, episode 1: Caregiver retention isn't a pay problem"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -141,9 +141,11 @@ function Index() {
             conversation with host Abeer Raza.
           </p>
           <p className="measure mt-3 text-card-foreground">
-            Daniela runs a home care agency and decided to build her own systems rather
-            than take what was on the shelf. She walks through that decision, and what
-            VA Community Care billing actually looks like from inside an agency.
+            Daniela Jonguitud has run a home care agency in California for twelve years,
+            and her argument is that caregiver retention was never really about pay. She
+            talks through what actually drives people out, why the problem doubled in a
+            single year, and what it looks like to run an agency while the industry
+            shrinks and the need for it grows.
           </p>
         </div>
       </section>
