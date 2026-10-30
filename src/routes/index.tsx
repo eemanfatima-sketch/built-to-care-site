@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 
 import { WaveformBand } from "@/components/WaveformBand";
 
@@ -147,6 +147,35 @@ function Index() {
       </section>
 
       {/* This season */}
+      {/* Calculator invitation */}
+      <section className="border-y border-border bg-background py-14">
+        <div className="mx-auto flex max-w-6xl flex-col items-start gap-12 px-6 min-[720px]:flex-row">
+          <div className="shrink-0">
+            <p className="font-display text-[clamp(42px,11vw,62px)] leading-none font-light tracking-[-0.03em] text-foreground tabular-nums">
+              $58,240
+            </p>
+            <p className="mt-3 text-[13.5px] leading-normal text-muted-foreground min-[720px]:max-w-[22ch]">
+              is what forty hours a week of admin costs in a year, at $28 an hour loaded
+            </p>
+          </div>
+          <div className="min-w-0 flex-1">
+            <h2 className="font-display text-[25px] leading-[1.3] font-normal text-foreground">
+              None of it shows up as a line on the P&amp;L.
+            </h2>
+            <p className="mt-3 font-calculator text-[16.5px] leading-[1.6] text-card-foreground">
+              Scheduling, authorizations, EVV exceptions, claims. Add up your own hours and see
+              the number.
+            </p>
+            <Link
+              to="/where-the-week-goes"
+              className="mt-6 inline-flex rounded-full bg-primary px-[22px] py-3 font-calculator text-[16px] font-medium text-primary-foreground transition-colors hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-primary"
+            >
+              Work out yours
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-card py-20 sm:py-24">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[minmax(220px,0.7fr)_minmax(0,1.7fr)] lg:gap-20">
           <div className="lg:sticky lg:top-12 lg:self-start">
