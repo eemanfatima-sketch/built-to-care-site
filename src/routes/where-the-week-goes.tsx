@@ -2,8 +2,8 @@ import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
 import { calculateWeek, DEFAULT_INPUTS, TASKS, validNumber, type WeekInputs } from '@/lib/week-calculator';
 
-const TITLE = 'Where the week goes — Built to Care';
-const DESCRIPTION = 'Work out what manual admin actually costs your home care agency — scheduling, authorizations, EVV exceptions, claims and documentation, converted into hours and dollars a year.';
+const TITLE = 'Where the week goes | Built to Care';
+const DESCRIPTION = 'Work out what manual admin actually costs your home care agency: scheduling, authorizations, EVV exceptions, claims and documentation, converted into hours and dollars a year.';
 const ARTWORK = 'https://built-to-care-site.lovable.app/built-to-care-logo.png';
 const whole = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
 const number = new Intl.NumberFormat('en-US', { maximumFractionDigits: 10 });
@@ -37,7 +37,7 @@ function WeekCalculator() {
 
         <section className="mt-[52px]" aria-labelledby="office-heading">
           <h2 id="office-heading" className="font-display text-[26px] font-normal sm:text-[30px]">Your office week</h2>
-          <p className="mt-3 border-b border-border pb-6 text-[14px] text-muted-foreground">Hours a week your whole office spends on each, added up across everyone. The figures below are a starting point from a typical mid-size agency, not your numbers — drag each one to match.</p>
+          <p className="mt-3 border-b border-border pb-6 text-[14px] text-muted-foreground">Hours a week your whole office spends on each, added up across everyone. The figures below are a starting point from a typical mid-size agency, not your numbers, so drag each one to match.</p>
           {TASKS.map(task => (
             <div key={task.id} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-5 border-b border-border py-6">
               <div className="min-w-0">
